@@ -32,16 +32,14 @@ while True:
         cur_btc_price = get_current_price("KRW-BTC")
 
         if krw > 5000 and cur_btc_price > log[0]:
-            #upbit.buy_market_order("KRW-BTC", krw*0.9995)
-            print("주문: ", krw*0.9995)
+            upbit.buy_market_order("KRW-BTC", krw*0.9995)
             log.append(btc - get_balance("BTC"))
 
         
         for i in range(len(log)):
             if log[i] < cur_btc_price * log[i]:
                 if btc > 0.00008:
-                    #upbit.sell_market_order("KRW-BTC", btc*0.9995)     
-                    print("판매: ", btc*0.9995)
+                    upbit.sell_market_order("KRW-BTC", btc*0.9995) 
                     log.pop(i)
 
         log.sort()
