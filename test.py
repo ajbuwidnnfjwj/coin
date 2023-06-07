@@ -9,7 +9,7 @@ target_price = df.iloc[0]['close'] + (df.iloc[0]['high'] - df.iloc[0]['low']) * 
 
 cur_price = pyupbit.get_orderbook(ticker="KRW-BTC")["orderbook_units"][0]["ask_price"]
 
-print(upbit.get_balance("KRW-BTC"))     # KRW-BTC 조회
-print(upbit.get_balance("KRW"))         # 보유 현금 조회
+print("보유 코인: ",upbit.get_balance("KRW-BTC"))     # KRW-BTC 조회
+print("보유 현금: ", upbit.get_balance("KRW"))         # 보유 현금 조회
 print("target price: ", target_price)
 print("current price: ", cur_price)
